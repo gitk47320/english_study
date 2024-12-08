@@ -15,8 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_07_050627) do
   enable_extension "plpgsql"
 
   create_table "sentences", force: :cascade do |t|
-    t.string "english_sentences"
-    t.string "japanese_sentences"
+    t.string "incorrect_english"
+    t.string "correct_english"
+    t.string "japanese"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
