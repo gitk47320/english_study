@@ -2,6 +2,8 @@
     会話表現
 </h1>
 
+<%= link_to "新規追加", new_sentence_path, class: 'btn primary' %>
+
 <div class="overflow-x-auto">
   <table class="table">
       <!-- head -->
@@ -18,6 +20,7 @@
             <td><%= sentence.incorrect_english %></td>
             <td><%= sentence.correct_english %></td>
             <td><%= sentence.japanese %></td>
+            <td><%= link_to "詳細", edit_sentence_path(sentence), class: 'btn primary' %>
           </tr>
         <% end %>
       </tbody>
