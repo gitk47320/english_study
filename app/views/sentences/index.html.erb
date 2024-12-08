@@ -1,0 +1,25 @@
+<h1 class="text-3xl font-bold underline">
+    会話表現
+</h1>
+
+<div class="overflow-x-auto">
+  <table class="table">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>英語（誤）</th>
+          <th>英語（正）</th>
+          <th>日本語</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sentences.each do |sentence| %>
+          <tr class='hover'>
+            <td><%= sentence.incorrect_english %></td>
+            <td><%= sentence.correct_english %></td>
+            <td><%= sentence.japanese %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
