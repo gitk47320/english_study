@@ -1,0 +1,24 @@
+<h1 class="text-3xl font-bold underline">
+    会話表現　新規追加
+</h1>
+
+<%= form_with model: @sentence, local: true do |form| %>
+	<div class="form-control mb-4">
+		<%= form.label '英語（正）', class: "label" %>
+		<%= form.text_field :correct_english, class: "input input-bordered" %>
+	</div>
+
+	<div class="form-control mb-4">
+		<%= form.label '英語（誤）', class: "label" %>
+		<%= form.text_field :incorrect_english, class: "input input-bordered" %>
+	</div>
+
+	<div class="form-control mb-4">
+		<%= form.label '日本語', class: "label" %>
+		<%= form.text_field :japanese, class: "input input-bordered" %>
+	</div>
+
+  <%= form.submit '登録する', class: 'btn btn-default' %>
+<% end %>
+
+<%= link_to '一覧に戻る', sentences_path, class: 'btn btn-neutral'%>
