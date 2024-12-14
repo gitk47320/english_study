@@ -18,5 +18,7 @@
     <%= form.text_area :japanese, class: "input input-bordered h-24" %>
   </div>
 
-  <%= form.submit '更新する', class: 'btn btn-primary w-full' %>
+  <%= form.submit '更新する', class: 'btn btn-primary' %>
 <% end %>
+
+<%= link_to "一覧に戻る", sentences_path, class: 'btn primary' %>
