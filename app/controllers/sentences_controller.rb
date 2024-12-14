@@ -2,7 +2,7 @@ class SentencesController < ApplicationController
   before_action :set_sentence, only: [:show, :edit, :update, :destroy]
 
   def index
-    @sentences = Sentence.all.order(:id)
+    @sentences = Sentence.all.order(:id).page(params[:page])
   end
 
   def new

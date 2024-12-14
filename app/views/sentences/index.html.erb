@@ -6,23 +6,24 @@
 
 <div class="overflow-x-auto">
   <table class="table">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th>英語（誤）</th>
-          <th>英語（正）</th>
-          <th>日本語</th>
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>英語（誤）</th>
+        <th>英語（正）</th>
+        <th>日本語</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sentences.each do |sentence| %>
+        <tr class='hover'>
+          <td><%= sentence.incorrect_english %></td>
+          <td><%= sentence.correct_english %></td>
+          <td><%= sentence.japanese %></td>
+          <td><%= link_to "詳細", edit_sentence_path(sentence), class: 'btn primary' %>
         </tr>
-      </thead>
-      <tbody>
-        <% @sentences.each do |sentence| %>
-          <tr class='hover'>
-            <td><%= sentence.incorrect_english %></td>
-            <td><%= sentence.correct_english %></td>
-            <td><%= sentence.japanese %></td>
-            <td><%= link_to "詳細", edit_sentence_path(sentence), class: 'btn primary' %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @sentences %>
 </div>
